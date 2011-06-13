@@ -9,3 +9,5 @@ init.el
 loaddefs.el
 package.el
 places
+*#
+.#*
