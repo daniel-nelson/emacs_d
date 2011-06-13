@@ -13,12 +13,6 @@
 (setq keybindings-file (concat dotfiles-dir "keybindings.el"))
 (load keybindings-file 'noerror)
 
-;; (setq interprogram-cut-function 'own-clipboard)
-;; (setq interprogram-paste-function 'get-clipboard)
-
-;; (setq x-select-enable-clipboard t)
-
-
 (require 'modeline-posn)
 (add-hook 'emacs-lisp-mode-hook (lambda () (setq modelinepos-column-limit 120)))
 (add-hook 'ruby-mode-hook (lambda () (setq modelinepos-column-limit 80)))
