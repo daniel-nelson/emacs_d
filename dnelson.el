@@ -1,3 +1,6 @@
+(setq-default ispell-program-name "aspell")
+(remove-hook 'text-mode-hook 'turn-on-auto-fill)
+
 (set-keyboard-coding-system nil)
 
 ;;colorize comment text

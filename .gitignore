@@ -11,3 +11,5 @@ package.el
 places
 *#
 .#*
+tramp
+url
