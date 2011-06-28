@@ -41,4 +41,25 @@
       (append
        '(("\\.haml\\'" . haml-mode))
        '(("\\.js\\'" . js2-mode))
+       '(("\\.scss\\'" . css-mode))
        auto-mode-alist))
+
+(add-hook 'css-mode-hook 'modal-cmd-mode)
+(add-hook 'feature-mode-hook 'modal-cmd-mode)
+(add-hook 'haml-mode-hook 'modal-cmd-mode)
+(add-hook 'html-mode-hook 'modal-cmd-mode)
+(add-hook 'js2-mode-hook 'modal-cmd-mode)
+(add-hook 'lisp-mode-hook 'modal-cmd-mode)
+(add-hook 'ruby-mode-hook 'modal-cmd-mode)
+(add-hook 'text-mode-hook 'modal-cmd-mode)
+(add-hook 'yaml-mode-hook 'modal-cmd-mode)
+
+;;; Modal-mode setup
+;;;
+(require 'modal-mode)
+(setq default-major-mode 'modal-fundamental-mode)
+(modal-mode 1)
+(when window-system
+  (modal-mode-line-background-mode 1))
+;;;
+;;; end modal-mode setup
