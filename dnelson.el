@@ -32,6 +32,11 @@
 (require 'feature-mode)
 (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
 
+(defun toggle-beginning-end-of-buffer ()
+  (interactive)
+  (if (eq 0 (count-lines 1 (point)))
+    (end-of-buffer)
+    (beginning-of-buffer)))
 
 ;; word-counting function from http://www.neverfriday.com/sweetfriday/2008/06/emacs-tip-word-counting-with-a.html
 (defun count-words ()
