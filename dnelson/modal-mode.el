@@ -745,7 +745,6 @@ transpose commands."
 
    ((kbd "I") . modal-ins-mode-enable-first-char)
    ((kbd "O") . modal-ins-mode-enable-open-up)
-   ((kbd "p") . yank)
 
    ((kbd "a") . modal-ins-mode-enable-next-char)
    ((kbd "d") . modal-1off-kill-mode-enable)
@@ -791,6 +790,8 @@ transpose commands."
    ((kbd "n") . kill-region)
    ((kbd "m") . recenter-top-bottom)
    ((kbd "g") . toggle-beginning-end-of-buffer)
+   ((kbd "p") . yank)
+   ((kbd "P") . yank-pop)
    ((kbd "\\") . indent-region)
 
    ([remap newline] . next-line)

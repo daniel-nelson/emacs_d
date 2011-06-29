@@ -57,6 +57,12 @@
 
 (global-set-key "\C- " 'modal-cmd-mode)
 
+;; modal mode makes \C-y \M-y mess up sometimes. start using modal mode
+;; convention for yanking
+(global-set-key "\C-p" 'yank)
+(global-set-key "\M-p" 'yank-pop)
+(global-set-key "\C-y" 'modal-1off-copy-mode-enable)
+
 ;;assign macro execution to F5 key
 (global-set-key [f5] 'call-last-kbd-macro)
 
