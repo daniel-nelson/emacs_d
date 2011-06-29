@@ -771,6 +771,9 @@ transpose commands."
    ((kbd "{") . backward-paragraph)
    ((kbd "}") . forward-paragraph)
 
+   ((kbd "[") . backward-paragraph)
+   ((kbd "]") . forward-paragraph)
+
    ((kbd "/") . isearch-forward-regexp)
    ((kbd "?") . isearch-backward-regexp)
    ((kbd "q") . comment-region)
@@ -791,6 +794,7 @@ transpose commands."
    ((kbd "g") . toggle-beginning-end-of-buffer)
    ((kbd "p") . yank)
    ((kbd "P") . yank-pop)
+   ((kbd "R") . query-replace)
    ((kbd "\\") . indent-region)
 
    ([remap newline] . next-line)
