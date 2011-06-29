@@ -55,6 +55,8 @@
 ;;is already bound to TAB, so make C-i indent-relative
 (global-set-key "\C-i" 'indent-relative)
 
+(global-set-key "\C-f" 'modal-cmd-mode)
+
 ;;assign macro execution to F5 key
 (global-set-key [f5] 'call-last-kbd-macro)
 

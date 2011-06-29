@@ -1,4 +1,6 @@
-(custom-set-variables '(grep-program "ack -H -a --nogroup"))
+;; the following successfully replaced grep with ack in rgrep, but fails with
+;; find-grep-dired
+;;(custom-set-variables '(grep-program "ack -H -a --nogroup"))
 (setq-default ispell-program-name "aspell")
 (remove-hook 'text-mode-hook 'turn-on-auto-fill)
 

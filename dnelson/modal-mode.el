@@ -780,6 +780,7 @@ transpose commands."
    ((kbd "Q") . uncomment-region)
    ((kbd "u") . undo)
    ((kbd "e") . rgrep)
+   ((kbd "E") . find-grep-dired)
    ((kbd "v") . set-mark-command)
    ((kbd "Z") . ido-imenu)
    ((kbd "z") . ido-switch-buffer)
@@ -794,7 +795,7 @@ transpose commands."
 
    ([remap newline] . next-line)
 ;;   ((kbd "ESC") . modal-cmd-handle-escape)))
-   ((kbd "ESC") . modal-ding)))
+   ((kbd "ESC") . modal-cmd-mode)))
 
 ;; (defun modal-cmd-handle-escape ()
 ;;   (interactive)
