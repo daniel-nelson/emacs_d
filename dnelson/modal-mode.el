@@ -739,7 +739,7 @@ transpose commands."
    ((kbd "r") . modal-cmd-replace-char)
    ((kbd "t") . modal-1off-transpose-mode-enable)
    ((kbd "y") . modal-1off-copy-mode-enable)
-   ((kbd "U") . scroll-down)
+   ((kbd "U") . scroll-down-command)
    ((kbd "i") . modal-ins-mode-enable)
    ((kbd "o") . modal-ins-mode-enable-open-down)
 
@@ -770,7 +770,7 @@ transpose commands."
    ((kbd "X") . backward-delete-char-untabify)
    ((kbd "M") . modal-move-to-window-middle)
 
-   ((kbd "SPC") . scroll-up)
+   ((kbd "SPC") . scroll-up-command)
 
    ((kbd "{") . backward-paragraph)
    ((kbd "}") . forward-paragraph)
@@ -782,6 +782,13 @@ transpose commands."
    ((kbd "u") . undo)
    ((kbd "e") . rgrep)
    ((kbd "v") . set-mark-command)
+   ((kbd "Z") . ido-menu)
+   ((kbd "z") . ido-switch-buffer)
+   ((kbd ",") . select-previous-window)
+   ((kbd ".") . other-window)
+   ((kbd "s") . save-buffers)
+   ((kbd "f") . ido-find-file)
+   ((kbd "n") . kill-region)
    ((kbd "\\") . indent-region)
 
    ([remap newline] . next-line)
