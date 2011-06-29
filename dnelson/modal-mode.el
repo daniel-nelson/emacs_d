@@ -768,8 +768,6 @@ transpose commands."
    ((kbd "X") . backward-delete-char-untabify)
    ((kbd "M") . modal-move-to-window-middle)
 
-   ((kbd "SPC") . scroll-up-command)
-
    ((kbd "{") . backward-paragraph)
    ((kbd "}") . forward-paragraph)
 
@@ -780,7 +778,8 @@ transpose commands."
    ((kbd "u") . undo)
    ((kbd "e") . rgrep)
    ((kbd "E") . find-grep-dired)
-   ((kbd "v") . set-mark-command)
+   ((kbd "v") . scroll-up-command)
+   ((kbd "SPC") . set-mark-command)
    ((kbd "Z") . ido-imenu)
    ((kbd "z") . ido-switch-buffer)
    ((kbd ",") . select-previous-window)
