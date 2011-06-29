@@ -739,13 +739,13 @@ transpose commands."
    ((kbd "r") . modal-cmd-replace-char)
    ((kbd "t") . modal-1off-transpose-mode-enable)
    ((kbd "y") . modal-1off-copy-mode-enable)
-   ((kbd "u") . scroll-down)
+   ((kbd "U") . scroll-down)
    ((kbd "i") . modal-ins-mode-enable)
    ((kbd "o") . modal-ins-mode-enable-open-down)
 
    ((kbd "I") . modal-ins-mode-enable-first-char)
    ((kbd "O") . modal-ins-mode-enable-open-up)
-   ((kbd "P") . yank)
+   ((kbd "p") . yank)
 
    ((kbd "a") . modal-ins-mode-enable-next-char)
    ((kbd "d") . modal-1off-kill-mode-enable)
@@ -775,21 +775,31 @@ transpose commands."
    ((kbd "{") . backward-paragraph)
    ((kbd "}") . forward-paragraph)
 
-   ([remap newline] . next-line)
-   ((kbd "ESC") . modal-cmd-handle-escape)))
+   ((kbd "/") . isearch-forward-regexp)
+   ((kbd "?") . isearch-backward-regexp)
+   ((kbd "q") . comment-region)
+   ((kbd "Q") . uncomment-region)
+   ((kbd "u") . undo)
+   ((kbd "e") . rgrep)
+   ((kbd "v") . set-mark-command)
+   ((kbd "\\") . indent-region)
 
-(defun modal-cmd-handle-escape ()
-  (interactive)
-  (let ((event last-input-event)
-        (ESC-keys '(?\e (control \[) escape)))
-    (if (sit-for (/ (if window-system 0 200) 1000.0) t)
-        (modal-ding)
-        ;; otherwise we somehow need to unread the event or otherwise
-        ;; let emacs handle it as normal---i.e., bypass this intercept
-        (let (emulation-mode-map-alists)
-          (setq unread-command-events
-                (list (cons t event)))
-          (call-interactively (key-binding (read-key-sequence nil t)))))))
+   ([remap newline] . next-line)
+;;   ((kbd "ESC") . modal-cmd-handle-escape)))
+   ((kbd "ESC") . modal-ding)))
+
+;; (defun modal-cmd-handle-escape ()
+;;   (interactive)
+;;   (let ((event last-input-event)
+;;         (ESC-keys '(?\e (control \[) escape)))
+;;     (if (sit-for (/ (if window-system 0 200) 1000.0) t)
+;;         (modal-ding)
+;;         ;; otherwise we somehow need to unread the event or otherwise
+;;         ;; let emacs handle it as normal---i.e., bypass this intercept
+;;         (let (emulation-mode-map-alists)
+;;           (setq unread-command-events
+;;                 (list (cons t event)))
+;;           (call-interactively (key-binding (read-key-sequence nil t)))))))
 
 (defvar modal-cmd-string (propertize "<C>" 'face 'hi-blue-b)
   "Mode-line string for modal-cmd-mode.")
