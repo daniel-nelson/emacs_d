@@ -35,6 +35,7 @@
 (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
 
 (defun toggle-beginning-end-of-buffer ()
+  "If at the first line, move point to last line; otherwise, move point to first line."
   (interactive)
   (if (eq 0 (count-lines 1 (point)))
     (end-of-buffer)
