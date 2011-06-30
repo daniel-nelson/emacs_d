@@ -795,6 +795,7 @@ transpose commands."
    ((kbd "p") . yank)
    ((kbd "P") . yank-pop)
    ((kbd "R") . query-replace)
+   ((kbd "C") . execute-extended-command)
    ((kbd "\\") . indent-region)
 
    ([remap newline] . next-line)
