@@ -25,8 +25,12 @@
 (add-hook 'feature-mode-hook (lambda () (setq modelinepos-column-limit 300)))
 (add-hook 'haml-mode-hook (lambda () (setq modelinepos-column-limit 300)))
 
+;; when on OSX
 (require 'pbcopy)
 (turn-on-pbcopy)
+;; when on Ubuntu
+;; (require 'xclip)
+;; (turn-on-xclip)
 
 ;; feature-mode for cucumber
 (add-to-list 'load-path (concat dotfiles-dir "dnelson/feature-mode"))
