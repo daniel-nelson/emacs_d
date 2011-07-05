@@ -64,7 +64,7 @@
 (global-set-key "\C-y" 'modal-1off-copy-mode-enable)
 
 ;;assign macro execution to F5 key
-(global-set-key [f5] 'call-last-kbd-macro)
+;; (global-set-key [f5] 'call-last-kbd-macro)
 
 ;;activate Emacs Code Browser with F4
 (global-set-key [f4] 'ecb-activate)
