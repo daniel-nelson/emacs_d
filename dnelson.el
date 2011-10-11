@@ -1,3 +1,9 @@
+(set-face-background 'vertical-border "blue")
+(set-face-foreground 'vertical-border "black")
+
+(set-face-background 'modeline "blue")
+(set-face-foreground 'modeline "black")
+
 ;; the following successfully replaced grep with ack in rgrep, but fails with
 ;; find-grep-dired
 ;;(custom-set-variables '(grep-program "ack -H -a --nogroup"))
@@ -54,6 +60,7 @@
       (append
        '(("\\.haml\\'" . haml-mode))
        '(("\\.js\\'" . js2-mode))
+       '(("\\.js.erb\\'" . js2-mode))
        '(("\\.scss\\'" . css-mode))
        auto-mode-alist))
 
