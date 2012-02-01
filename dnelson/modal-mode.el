@@ -755,7 +755,6 @@ transpose commands."
    ((kbd "'") . jump-to-register)
 
    ((kbd "A") . modal-ins-mode-enable-eol)
-   ((kbd "D") . kill-line)
    ((kbd "G") . goto-line)
    ((kbd "H") . modal-move-to-window-top)
    ((kbd "J") . join-line)
@@ -765,7 +764,9 @@ transpose commands."
    ((kbd "c") . modal-1off-change-mode-enable)
    ((kbd "b") . backward-word)
 
-   ((kbd "X") . backward-delete-char-untabify)
+   ((kbd "S") . string-insert-rectangle)
+   ((kbd "D") . delete-rectangle)
+   ;;((kbd "X") . backward-delete-char-untabify)
    ((kbd "M") . modal-move-to-window-middle)
 
    ((kbd "{") . backward-paragraph)
