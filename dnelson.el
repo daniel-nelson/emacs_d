@@ -4,6 +4,13 @@
 (set-face-background 'modeline "blue")
 (set-face-foreground 'modeline "black")
 
+;; when on white background
+;; (set-face-background 'vertical-border "black")
+;; (set-face-foreground 'vertical-border "white")
+
+;; (set-face-background 'modeline "black")
+;; (set-face-foreground 'modeline "white")
+
 ;; the following successfully replaced grep with ack in rgrep, but fails with
 ;; find-grep-dired
 ;;(custom-set-variables '(grep-program "ack -H -a --nogroup"))
@@ -61,6 +68,7 @@
        '(("\\.haml\\'" . haml-mode))
        '(("\\.js\\'" . js2-mode))
        '(("\\.js.erb\\'" . js2-mode))
+       '(("\\.coffee.erb\\'" . coffee-mode))
        '(("\\.scss\\'" . css-mode))
        auto-mode-alist))
 
@@ -73,6 +81,8 @@
 (add-hook 'ruby-mode-hook 'modal-cmd-mode)
 (add-hook 'text-mode-hook 'modal-cmd-mode)
 (add-hook 'yaml-mode-hook 'modal-cmd-mode)
+(add-hook 'coffee-mode-hook 'modal-cmd-mode)
+(add-hook 'occur-mode-hook 'modal-cmd-mode)
 
 ;;; Modal-mode setup
 ;;;
@@ -83,3 +93,44 @@
   (modal-mode-line-background-mode 1))
 ;;;
 ;;; end modal-mode setup
+
+(defun coffee-custom ()
+  "coffee-mode-hook"
+ (set (make-local-variable 'tab-width) 2))
+
+(setq tab-width 2)
+
+(add-hook 'coffee-mode-hook
+  '(lambda() (coffee-custom)))
+
+
+
+
+
+;;;;;;;;;; search open buffers for a string ;;;;;;;;;;
+
+(defcustom search-all-buffers-ignored-files (list (rx-to-string '(and bos (or ".bash_history" "TAGS") eos)))
+  "Files to ignore when searching buffers via \\[search-all-buffers]."
+  :type 'editable-list)
+
+(require 'grep)
+(defun search-all-buffers (regexp prefix)
+  "Searches file-visiting buffers for occurence of REGEXP.  With
+prefix > 1 (i.e., if you type C-u \\[search-all-buffers]),
+searches all buffers."
+  (interactive (list (grep-read-regexp)
+                     current-prefix-arg))
+  (message "Regexp is %s; prefix is %s" regexp prefix)
+  (multi-occur
+   (if (member prefix '(4 (4)))
+       (buffer-list)
+     (remove-if
+      (lambda (b) (some (lambda (rx) (string-match rx  (file-name-nondirectory (buffer-file-name b)))) search-all-buffers-ignored-files))
+      (remove-if-not 'buffer-file-name (buffer-list))))
+
+   regexp))
+
+;;;;;;;;;; search open buffers for a string ;;;;;;;;;;
+
+(add-hook 'sgml-mode-hook 'zencoding-mode)
+(require 'zencoding-mode)

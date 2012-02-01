@@ -70,3 +70,6 @@
 (global-set-key [f4] 'ecb-activate)
 ;;deactivate Emacs Code Browser with shift F4
 (global-set-key [S-f4] 'ecb-deactivate)
+
+(global-set-key "\C-z" 'zencoding-expand-line)
+(global-set-key "\C-i" 'string-insert-rectangle)

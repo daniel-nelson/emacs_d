@@ -798,6 +798,7 @@ transpose commands."
    ((kbd "C") . execute-extended-command)
    ((kbd "V") . call-last-kbd-macro)
    ((kbd "\\") . indent-region)
+   ((kbd "B") . search-all-buffers)
 
    ([remap newline] . next-line)
 ;;   ((kbd "ESC") . modal-cmd-handle-escape)))
