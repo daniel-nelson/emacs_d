@@ -69,6 +69,7 @@
        '(("\\.js\\'" . js2-mode))
        '(("\\.js.erb\\'" . js2-mode))
        '(("\\.coffee.erb\\'" . coffee-mode))
+       '(("\\.json\\'" . js2-mode))
        '(("\\.scss\\'" . css-mode))
        auto-mode-alist))
 
@@ -83,6 +84,7 @@
 (add-hook 'yaml-mode-hook 'modal-cmd-mode)
 (add-hook 'coffee-mode-hook 'modal-cmd-mode)
 (add-hook 'occur-mode-hook 'modal-cmd-mode)
+(add-hook 'actionscript-mode 'modal-cmd-mode)
 
 ;;; Modal-mode setup
 ;;;
@@ -104,6 +106,9 @@
   '(lambda() (coffee-custom)))
 
 
+(autoload 'actionscript-mode "actionscript-mode" "Major mode for actionscript." t)
+(add-to-list 'auto-mode-alist '("\\.as$" . actionscript-mode))
+(eval-after-load "actionscript-mode" '(load "actionscript-config"))
 
 
 
